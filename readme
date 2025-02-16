@@ -1,0 +1,8 @@
+# Annotations used
+
+@SpringBootApplication
+@RestController
+@Component
+@Service
+@RequestMapping
+@Autowired
