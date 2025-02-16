@@ -1,4 +1,5 @@
 package com.author.demo;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
@@ -10,6 +11,12 @@ public class MyService {
     public String getMessage() {
         counter++;
         return counter + " <--> Hello from MyService!";
+    }
+
+    @Cacheable(value = "users", key = "#id")
+    public User getUserById(int id) {
+        System.out.println("Fetching user from DB...");
+        return new User(id, "John Doe", "john.email.com");
     }
 
     @PostConstruct

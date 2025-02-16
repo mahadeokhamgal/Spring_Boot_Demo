@@ -12,6 +12,12 @@ Transactional(readOnly = true) # speeds up read-only operations.
 @PreDestroy
 @Controller
 @ResponseBody
+@CrossOrigin(origins = "http://localhost:3000") // Allow frontend access
+@EnableCaching # on main class
+@Cacheable("cacheName")
+@CachePut("cacheName")
+@CacheEvict("cacheName")
+
 @Entity Annotation in JPA
     @Id  // Marks this field as the Primary Key
     @GeneratedValue (strategy = GenerationType.IDENTITY) // Auto-increments the ID
