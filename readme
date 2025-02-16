@@ -1,8 +1,19 @@
 # Annotations used
 
 @SpringBootApplication
+@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
 @RestController
 @Component
 @Service
 @RequestMapping
 @Autowired
+@PostConstruct
+@PreDestroy
+
+How the IoC Container Works
+Step by step What Happens?
+1️⃣ Bean Definition	@Component, @Service, @Repository mark classes as Spring-managed beans.
+2️⃣ Dependency Injection	@Autowired injects dependencies automatically.
+3️⃣ IoC Container Initialization	ApplicationContext starts and manages beans.
+4️⃣ Application Runs	Beans are available for use.
+5️⃣ IoC Container Shutdown	@PreDestroy cleans up resources before shutdown.
