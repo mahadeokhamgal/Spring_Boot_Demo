@@ -12,6 +12,7 @@ Transactional(readOnly = true) # speeds up read-only operations.
 @PreDestroy
 @Controller
 @ResponseBody
+@RequestBody
 @CrossOrigin(origins = "http://localhost:3000") // Allow frontend access
 @EnableCaching # on main class
 @Cacheable("cacheName")
