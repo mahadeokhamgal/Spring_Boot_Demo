@@ -5,11 +5,18 @@
 @Component
 @Service
 @RequestMapping  - @GetMapping - @PostMapping - @PutMapping - @DeleteMapping - @PatchMapping
-@Autowired
+@Autowired  // Not required in Spring Boot 4+
 @PostConstruct
 @PreDestroy
 @Controller
 @ResponseBody
+@Entity Annotation in JPA
+    @Id  // Marks this field as the Primary Key
+    @GeneratedValue (strategy = GenerationType.IDENTITY) // Auto-increments the ID
+    @Table(name = "users")  // Custom table name
+    @Column(name = "full_name", nullable = false, length = 100)
+    @OneToMany(mappedBy = "user") // One user has many orders
+    @JoinColumn(name = "user_id")
 
 # Generic to java
 @Override
