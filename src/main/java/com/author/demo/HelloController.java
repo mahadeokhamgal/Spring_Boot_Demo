@@ -2,6 +2,7 @@ package com.author.demo;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
@@ -31,7 +32,16 @@ public class HelloController {
     public User getUser() {
         System.out.println("User route triggered");
         User user = new User(1, "John Doe", "john@example.com");
-        System.out.println(user);
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonString = objectMapper.writeValueAsString(user);
+            System.out.println(jsonString);
+
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e);
+        }
         return user;
     }
 
