@@ -4,11 +4,10 @@
 @RestController = @Controller + @ResponseBody.
 @Component
 @Service
-@RequestMapping
+@RequestMapping  - @GetMapping - @PostMapping - @PutMapping - @DeleteMapping - @PatchMapping
 @Autowired
 @PostConstruct
 @PreDestroy
-@GetMapping
 @Controller
 @ResponseBody
 
@@ -33,6 +32,14 @@ Step by step What Happens?
 ✅ Use @Repository for database access and exception handling.
 ✅ Use @Controller when building Spring MVC applications with views (HTML, JSP).
 ✅ Use @RestController when building REST APIs that return JSON/XML.
+
+** Spring Boot loads Application properties from the following locations (in order of priority): **
+Command-line arguments (--server.port=8081)
+Environment variables
+application.properties or application.yml (inside src/main/resources/)
+External property files (config/ directory, /etc/config/)
+Java system properties (-Dserver.port=8081)
+Default values in @Value annotations or Java classes
 
 # To do.
 1. Caching in spring boot.
