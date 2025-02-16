@@ -12,11 +12,12 @@ public class HelloController {
     @Autowired
     public HelloController(MyService myService) {
         this.myService = myService;
+        System.out.println("Hello controller constructor " + this.myService.getMessage());
     }
 
     @RequestMapping("hello")
-    public String requestMethodName() {
-        System.out.println("On hello route" + this.myService.getMessage());
+    public String helloRoute() {
+        System.out.println("Hello controller hello route method" + this.myService.getMessage());
         return "Hello world";
     }
 }

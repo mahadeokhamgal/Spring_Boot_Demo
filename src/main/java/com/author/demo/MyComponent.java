@@ -14,6 +14,6 @@ public class MyComponent {
     }
 
     public void showMessage() {
-        System.out.println("In my component ->  " + myService.getMessage());
+        System.out.println("In my component showMessage ->  " + myService.getMessage());
     }
 }
