@@ -7,9 +7,11 @@ import jakarta.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
+@RequestMapping("/api")
 public class HelloController {
     private MyService myService;
 
@@ -19,10 +21,18 @@ public class HelloController {
         System.out.println("Hello controller constructor " + this.myService.getMessage());
     }
 
-    @RequestMapping("hello")
+    @GetMapping("hello")
     public String helloRoute() {
         System.out.println("Hello controller hello route method" + this.myService.getMessage());
         return "Hello world";
+    }
+
+    @GetMapping("/user")
+    public User getUser() {
+        System.out.println("User route triggered");
+        User user = new User(1, "John Doe", "john@example.com");
+        System.out.println(user);
+        return user;
     }
 
     @PostConstruct
