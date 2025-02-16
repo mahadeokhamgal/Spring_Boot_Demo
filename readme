@@ -5,6 +5,8 @@
 @Component
 @Service
 @RequestMapping  - @GetMapping - @PostMapping - @PutMapping - @DeleteMapping - @PatchMapping
+Transactional() # enables rollback on service layer.
+Transactional(readOnly = true) # speeds up read-only operations.
 @Autowired  // Not required in Spring Boot 4+
 @PostConstruct
 @PreDestroy
