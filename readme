@@ -54,3 +54,4 @@ Default values in @Value annotations or Java classes
 1. Caching in spring boot.
 2. Spring Security for authentication/authorization.
 3. Work with databases using JPA & Hibernate.
+4. Spring boot cli, dev tools.
