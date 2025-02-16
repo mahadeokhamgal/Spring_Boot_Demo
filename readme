@@ -17,6 +17,7 @@ Transactional(readOnly = true) # speeds up read-only operations.
 @Cacheable("cacheName")
 @CachePut("cacheName")
 @CacheEvict("cacheName")
+@Bean
 
 @Entity Annotation in JPA
     @Id  // Marks this field as the Primary Key
