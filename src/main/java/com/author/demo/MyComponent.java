@@ -10,9 +10,10 @@ public class MyComponent {
     @Autowired
     public void setMyService(MyService myService) {
         this.myService = myService;
+        this.showMessage();
     }
 
     public void showMessage() {
-        System.out.println(myService.getMessage());
+        System.out.println("In my component ->  " + myService.getMessage());
     }
 }

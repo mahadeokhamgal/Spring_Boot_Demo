@@ -16,7 +16,7 @@ public class HelloController {
 
     @RequestMapping("hello")
     public String requestMethodName() {
-        System.out.println(this.myService.getMessage());
+        System.out.println("On hello route" + this.myService.getMessage());
         return "Hello world";
     }
 }
